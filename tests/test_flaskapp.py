@@ -3,7 +3,7 @@ import unittest,json
 from main import app
 
 
-class FlaskTestCase(unittest.TestCase):
+class FlaskTestCase(unittest.TestCase): #inherit the TestCase from unittest class
     def setUp(self):
         app.config['TESTING'] = True
         self.app = app.test_client()
@@ -20,6 +20,10 @@ class FlaskTestCase(unittest.TestCase):
 
 
     # TODO DEFINE TWO MORE TESTS ON THE END POINTS
+    def test_toppercase(self):
+        response = self.app.get('/touppercase?s=test')
+        self.assertEqual(response, "TEST", "Toppercase failed known answer toppercase(test) = TEST")
+
 
 
 if __name__ == '__main__':

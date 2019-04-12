@@ -22,7 +22,7 @@ class FlaskTestCase(unittest.TestCase): #inherit the TestCase from unittest clas
     # TODO DEFINE TWO MORE TESTS ON THE END POINTS
     def test_toppercase(self):
         response = self.app.get('/touppercase?s=test')
-        self.assertEqual(response, "TEST", "Toppercase failed known answer toppercase(test) = TEST")
+        self.assertEqual(response.data, "TEST", "Toppercase failed known answer toppercase(test) = TEST")
 
 
 
